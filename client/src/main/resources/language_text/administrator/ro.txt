@@ -1,0 +1,14 @@
+Update Entry Button:Actualizeaza
+Delete Entry Button:Sterge Valoare Selectata
+View Postmen Button:Vizualizeaza Postasi
+Add Button:Adauga
+Add Entry Button:Adauga Intrare Noua
+View Coordinators Button:Vizualizeaza Coordonatori
+Data Table:
+Data Tablei0:Utilizatori
+Update Table:
+Update Tablei0:Campuri
+Update Tablei1:Valori
+Update Tablej0:Nume
+Update Tablej1:Utilizator
+Update Tablej2:Parola

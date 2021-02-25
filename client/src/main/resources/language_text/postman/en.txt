@@ -1,0 +1,10 @@
+View Parcels Button: View Parcels
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Address
+Data Tablei2:Coordinates
+Data Tablei3:Date and Time
+Search By Parcel ID Button:Search by Parcel ID
+Tabbed Panel: 
+Tabbed Panel0:View Parcels
+Tabbed Panel1:Map

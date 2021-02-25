@@ -1,0 +1,14 @@
+Update Entry Button:Update
+Delete Entry Button:Delete Entry
+View Postmen Button:View Postmen
+Add Button:Add
+Add Entry Button:Add Entry
+View Coordinators Button:View Coordinators
+Data Table:
+Data Tablei0:Users
+Update Table:
+Update Tablei0:Fields
+Update Tablei1:Values
+Update Tablej0:Name
+Update Tablej1:Username
+Update Tablej2:Password

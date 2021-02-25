@@ -1,0 +1,10 @@
+View Parcels Button:Visualizza Pacchi
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Indirizzo
+Data Tablei2:Coordinate
+Data Tablei3:Data e Ora
+Search By Parcel ID Button:Cerca per ID Pacco
+Tabbed Panel: 
+Tabbed Panel0:Visualizza Pacchi
+Tabbed Panel1:Mappa

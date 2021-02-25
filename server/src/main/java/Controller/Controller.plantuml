@@ -1,0 +1,203 @@
+@startuml
+
+title __CONTROLLER's Class Diagram__\n
+
+  namespace Controller {
+    class Controller.AuthenticationController {
+        - hasher : MessageDigest
+        + AuthenticationController()
+        + addUser()
+        + deleteUser()
+        + getUserByID()
+        + getUserByUsername()
+        + getUsers()
+        + updateUser()
+        + verifyLogin()
+        - getMd5FromString()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.CommunicationProtocol {
+        {static} + DELETE_PARCEL : int
+        {static} + DELETE_USER : int
+        {static} + EXIT : int
+        {static} + GET_ALL_PARCELS : int
+        {static} + GET_ALL_USERS : int
+        {static} + GET_GRAPH_LAYOUT : int
+        {static} + GET_PARCELS_BY_ID : int
+        {static} + GET_PARCELS_BY_POSTMAN_ID : int
+        {static} + GET_USER_BY_ID : int
+        {static} + GET_USER_BY_USERNAME : int
+        {static} + INSERT_PARCEL : int
+        {static} + INSERT_USER : int
+        {static} + REQUEST_UPDATE_COORDINATORS : int
+        {static} + REQUEST_UPDATE_PARCELS : int
+        {static} + REQUEST_UPDATE_POSTMEN : int
+        {static} + UPDATE_PARCEL : int
+        {static} + UPDATE_USER : int
+        {static} + VERIFY_LOGIN : int
+        + communicationPurpose : int
+        + objects : List<T>
+        + CommunicationProtocol()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.GraphController {
+        - graph : Graph<Parcel, WeightedEdge>
+        + GraphController()
+        + GraphController()
+        + addParcelToCompleteGraph()
+        + createContainer()
+        + emptyGraph()
+        + getGraph()
+        + printGraph()
+        + removeParcelFromGraph()
+        + saveGraphAsLayout()
+        + updateParcelInGraph()
+        - convertGraph()
+        - distance()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.GraphController.WeightedEdge {
+        + toString()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.JGraphXAdapter {
+        - cellToEdgeMap : HashMap<mxICell, E>
+        - cellToVertexMap : HashMap<mxICell, V>
+        - edgeToCellMap : HashMap<E, mxICell>
+        - graphT : Graph<V, E>
+        - vertexToCellMap : HashMap<V, mxICell>
+        + JGraphXAdapter()
+        + JGraphXAdapter()
+        + edgeAdded()
+        + edgeRemoved()
+        + getCellToEdgeMap()
+        + getCellToVertexMap()
+        + getEdgeToCellMap()
+        + getVertexToCellMap()
+        + vertexAdded()
+        + vertexRemoved()
+        - addJGraphTEdge()
+        - addJGraphTVertex()
+        - insertJGraphT()
+        - removeEdge()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.MainController {
+        {static} - SERVER_CONFIGURATION_FILE_PATH : String
+        - clients : List<QueryHandler>
+        - serverSocket : ServerSocket
+        - socket : Socket
+        + MainController()
+        + getGraphLayout()
+        + parcelChanged()
+        + serverSetup()
+        + userChanged()
+        # removeClient()
+        - addClient()
+    }
+  }
+  
+
+  namespace Controller {
+    interface Controller.MainController.DontSerialize {
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.ParcelController {
+        + ParcelController()
+        + addParcel()
+        + getGraph()
+        + getGraphLayout()
+        + getParcelByID()
+        + getParcels()
+        + getParcelsByPostmanID()
+        + printParcelGraph()
+        + removeParcel()
+        + updateParcel()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.QueryHandler {
+        - socket : Socket
+        + QueryHandler()
+        + deleteParcel()
+        + deleteUser()
+        + getAllParcels()
+        + getAllUsers()
+        + getGraphLayout()
+        + getLoggedUser()
+        + getParcelsByID()
+        + getParcelsByPostmanID()
+        + getUserByID()
+        + getUserByUsername()
+        + insertParcel()
+        + insertUser()
+        + requestCoordinatorsUpdate()
+        + requestParcelsUpdate()
+        + requestPostmenUpdate()
+        + run()
+        + updateParcel()
+        + updateUser()
+        + verifyLogin()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.Serializer {
+        {static} + deserialize()
+        {static} + serialize()
+        {static} + serializeParcelsAsCSV()
+        {static} + serializeParcelsAsXML()
+        {static} + serializeReportAsJson()
+    }
+  }
+  
+
+  Controller.AuthenticationController o-- Controller.MainController : mainController
+  Controller.AuthenticationController o-- DataAccessLayer.UserDAO : userDAO
+  Controller.CommunicationProtocol .up.|> java.io.Serializable
+  Controller.GraphController +-down- Controller.GraphController.WeightedEdge
+  Controller.GraphController.WeightedEdge -up-|> org.jgrapht.graph.DefaultWeightedEdge
+  Controller.JGraphXAdapter .up.|> org.jgrapht.event.GraphListener
+  Controller.JGraphXAdapter -up-|> com.mxgraph.view.mxGraph
+  Controller.MainController o-- Controller.AuthenticationController : authenticationController
+  Controller.MainController o-- Controller.ParcelController : parcelController
+  Controller.MainController o-- DataAccessLayer.UserDAO : userDAO
+  Controller.MainController +-down- Controller.MainController.DontSerialize
+  Controller.ParcelController o-- Controller.GraphController : graphController
+  Controller.ParcelController o-- Controller.MainController : mainController
+  Controller.ParcelController o-- DataAccessLayer.ParcelDAO : parcelDAO
+  Controller.QueryHandler o-- Controller.AuthenticationController : authenticationController
+  Controller.QueryHandler o-- Model.User : loggedUser
+  Controller.QueryHandler o-- Controller.MainController : mainController
+  Controller.QueryHandler o-- Controller.ParcelController : parcelController
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

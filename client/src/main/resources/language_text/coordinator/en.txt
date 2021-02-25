@@ -1,0 +1,29 @@
+Delete Parcel Button:Delete Parcel
+View Parcels Button:View Parcels
+Update Button:Update
+Add Button:Add
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Address
+Data Tablei2:Coordinates
+Data Tablei3:Date and Time
+Data Tablei4:Assigned Postman
+Data Tablei5:Assigned Postman's ID
+Main Tabbed Pane:
+Main Tabbed Pane0:Parcels
+Main Tabbed Pane1:Map
+Postmen Table:
+Postmen Tablei0:ID
+Postmen Tablei1:Name
+Update Table:
+Update Tablei0:Fields
+Update Tablei1:Data
+Update Tablej0:Address
+Update Tablej1:Coordinates
+Update Tablej2:Assigned Postman's ID
+Search By Parcel ID Button:Search by Parcel ID
+Add Parcel Button:Add Parcel
+Secondary Tabbed Pane:
+Secondary Tabbed Pane0:Postmen
+Secondary Tabbed Pane1:Parcels
+Save Report Button:Save Report

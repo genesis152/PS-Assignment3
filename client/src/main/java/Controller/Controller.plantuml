@@ -1,0 +1,189 @@
+@startuml
+
+title __CONTROLLER's Class Diagram__\n
+
+  namespace Controller {
+    class Controller.AdministratorController {
+        - ENGLISH_TEXT_FILE_PATH : String
+        - ITALIAN_TEXT_FILE_PATH : String
+        - ROMANIAN_TEXT_FILE_PATH : String
+        - components : Map<String, Component>
+        - componentsText : Map<String, String>
+        - coordinators : List<String>
+        - currentShowingType : Type
+        - dataTableColumns : String[]
+        - postmen : List<String>
+        - selectedUserName : String
+        - updateTableColumns : String[]
+        - updateTableFields : String[]
+        + AdministratorController()
+        + addButtonActionListener()
+        + addEntryButtonActionListener()
+        + classifyUsers()
+        + comboBoxActionListener()
+        + deleteButtonActionListener()
+        + updateEntryButtonActionListener()
+        + updateSecondaryTable()
+        + viewCoordinatorsButtonActionListener()
+        + viewPostmenButtonActionListener()
+        + windowListener()
+        # updateCoordinatorsTable()
+        # updatePostmenTable()
+        - createTable()
+        - getComponentTextFromFile()
+        - getComponents()
+        - setTextFromMap()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.CoordinatorViewController {
+        # currentUser : User
+        - ENGLISH_TEXT_FILE_PATH : String
+        - ITALIAN_TEXT_FILE_PATH : String
+        - ROMANIAN_TEXT_FILE_PATH : String
+        - components : Map<String, Component>
+        - componentsText : Map<String, String>
+        - dataTableColumns : String[]
+        - parcels : List<Parcel>
+        - postmanTableColumns : String[]
+        - postmen : Map<Integer, User>
+        - selectedParcelID : Integer
+        - updateTableColumns : String[]
+        - updateTableFields : String[]
+        + CoordinatorViewController()
+        + addButtonActionListener()
+        + addParcelButtonActionListener()
+        + comboBoxActionListener()
+        + deleteParcelButtonActionListener()
+        + mapPaneComponentAdapter()
+        + saveReportButtonActionListener()
+        + searchParcelByIDButtonActionListener()
+        + updateParcelButtonActionListener()
+        + updatePostmenTable()
+        + updateSecondaryTable()
+        + viewParcelsButtonActionListener()
+        + windowListener()
+        # updateParcelsTable()
+        - createTable()
+        - dumpComponentsToFiles()
+        - getComponentTextFromFile()
+        - getComponents()
+        - setTextFromMap()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.LoginViewController {
+        + LoginViewController()
+        + endView()
+        + verifyLogin()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.MainController {
+        - CLIENT_CONFIGURATION_FILE_PATH : String
+        - loggedUser : User
+        - socket : Socket
+        + MainController()
+        + clientSetup()
+        + createContainerFromGraph()
+        + switchView()
+        # updateCoordinators()
+        # updateParcels()
+        # updatePostmen()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.PostmanViewController {
+        - ENGLISH_TEXT_FILE_PATH : String
+        - ITALIAN_TEXT_FILE_PATH : String
+        - ROMANIAN_TEXT_FILE_PATH : String
+        - components : Map<String, Component>
+        - componentsText : Map<String, String>
+        - currentUser : User
+        - dataTableColumns : String[]
+        - parcels : List<Parcel>
+        + PostmanViewController()
+        + comboBoxActionListener()
+        + mapPaneComponentAdapter()
+        + searchParcelByIDButtonActionListener()
+        + viewParcelsButtonActionListener()
+        + windowListener()
+        # updateParcelsTable()
+        - createTable()
+        - dumpComponentsToFiles()
+        - getComponentTextFromFile()
+        - getComponents()
+        - setTextFromMap()
+    }
+  }
+  
+
+  namespace Controller {
+    class Controller.ServerCommunication {
+        + socket : Socket
+        {static} - instance : ServerCommunication
+        - responsePool : List<LinkedBlockingQueue<CommunicationProtocol<Object>>>
+        - threadPool : List<LinkedBlockingQueue<Thread>>
+        + addUser()
+        {static} + buildInstance()
+        + deleteParcel()
+        + deleteUser()
+        + exit()
+        + getGraphLayout()
+        {static} + getInstance()
+        + getParcelByID()
+        + getParcels()
+        + getParcelsByPostmanID()
+        + getUserByID()
+        + getUserByUsername()
+        + getUsers()
+        + insertParcel()
+        + updateParcel()
+        + updateUser()
+        + verifyLogin()
+        - ServerCommunication()
+        - initResponsePool()
+        - initThreadPool()
+        - requestUpdateCoordinators()
+        - requestUpdateParcels()
+        - requestUpdatePostmen()
+        - startMessageListener()
+    }
+  }
+  
+
+  Controller.AdministratorController o-- View.AdministratorView : administratorView
+  Controller.AdministratorController o-- Controller.MainController : mainController
+  Controller.AdministratorController o-- Controller.ServerCommunication : serverCommunication
+  Controller.CoordinatorViewController o-- Controller.MainController : mainController
+  Controller.CoordinatorViewController o-- View.CoordinatorView : coordinatorView
+  Controller.CoordinatorViewController o-- Controller.ServerCommunication : serverCommunication
+  Controller.LoginViewController o-- View.LoginView : loginView
+  Controller.LoginViewController o-- Controller.ServerCommunication : serverCommunication
+  Controller.MainController o-- Controller.AdministratorController : administratorController
+  Controller.MainController o-- Controller.ServerCommunication : communication
+  Controller.MainController o-- Controller.CoordinatorViewController : coordinatorViewController
+  Controller.MainController o-- Controller.LoginViewController : loginViewController
+  Controller.MainController o-- Controller.PostmanViewController : postmanViewController
+  Controller.PostmanViewController o-- Controller.MainController : mainController
+  Controller.PostmanViewController o-- View.PostmanView : postmanView
+  Controller.PostmanViewController o-- Controller.ServerCommunication : serverCommunication
+  Controller.ServerCommunication o-- Controller.MainController : mainController
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,10 @@
+View Parcels Button:Vizualizeaza Colete
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Adresa
+Data Tablei2:Coordonate
+Data Tablei3:Data si Timp
+Search By Parcel ID Button:Cauta Colet dupa ID
+Tabbed Panel: 
+Tabbed Panel0:Colete
+Tabbed Panel1:Harta

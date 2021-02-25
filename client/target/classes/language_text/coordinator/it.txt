@@ -1,0 +1,29 @@
+Delete Parcel Button:Elimina pacco
+View Parcels Button:Visualizza pacchi
+Update Button:Aggiorna
+Add Button:Aggiungi
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Indirizzo
+Data Tablei2:Coordinate
+Data Tablei3:Data e Ora
+Data Tablei4:Postino Assegnato
+Data Tablei5:ID Postino Assegnato
+Main Tabbed Pane:
+Main Tabbed Pane0:Pacchi
+Main Tabbed Pane1:Mappa
+Postmen Table:
+Postmen Tablei0:ID
+Postmen Tablei1:Nome
+Update Table:
+Update Tablei0:Campi
+Update Tablei1:Dati
+Update Tablej0:Indirizzo
+Update Tablej1:Coordinate
+Update Tablej2:ID Postino Assegnato
+Search By Parcel ID Button:Cerca per ID Pacco
+Add Parcel Button:Aggiungi Pacco
+Secondary Tabbed Pane:
+Secondary Tabbed Pane0:Postini
+Secondary Tabbed Pane1:Pacchi
+Save Report Button:Salva Rapporto

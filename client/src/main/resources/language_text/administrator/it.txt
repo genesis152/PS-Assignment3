@@ -1,0 +1,14 @@
+Update Entry Button:Aggiornare
+Delete Entry Button:Elimina Voce
+View Postmen Button:Visualizza Postini
+Add Button:Inserisci
+Add Entry Button:Aggiungi Voce
+View Coordinators Button:Visualizza Coordinatori
+Data Table:
+Data Tablei0:Utenti
+Update Table:
+Update Tablei0:Campi
+Update Tablei1:Valori
+Update Tablej0:Nome
+Update Tablej1:Nome Utente
+Update Tablej2:Password

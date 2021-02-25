@@ -1,0 +1,29 @@
+Delete Parcel Button:Sterge Colet
+View Parcels Button:Vizualizeaza Colete
+Update Button:Actualizeaza
+Add Button:Adauga
+Data Table:
+Data Tablei0:ID
+Data Tablei1:Adresa
+Data Tablei2:Coordonate
+Data Tablei3:Data si Timp
+Data Tablei4:Postas
+Data Tablei5:ID Postas
+Main Tabbed Pane:
+Main Tabbed Pane0:Colete
+Main Tabbed Pane1:Harta
+Postmen Table:
+Postmen Tablei0:ID
+Postmen Tablei1:Nume
+Update Table:
+Update Tablei0:Campuri
+Update Tablei1:Date
+Update Tablej0:Adresa
+Update Tablej1:Coordonate
+Update Tablej2:ID Postas
+Search By Parcel ID Button:Cauta Colet Dupa ID
+Add Parcel Button:Adauga Colet
+Secondary Tabbed Pane:
+Secondary Tabbed Pane0:Postasi
+Secondary Tabbed Pane1:Colete
+Save Report Button:Salveaza Raport
